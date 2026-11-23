@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cofre Secreto | Luiza Pedroso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <div class="logo">Segredo</div>
+            <span class="tag">DESAFIO 01</span>
+        </header>
+
+        <section class="game">
+
+            <div class="intro">
+                <span class="subtitle">ACESSO RESTRITO</span>
+                <h1>O Cofre <span>Secreto.</span></h1>
+                <p>
+                    Existe uma senha escondida entre 1 e 50.
+                    Você tem apenas 7 chances para descobrir!
+                </p>
+            </div>
+
+            <div class="safe-area">
+                <div class="safe-glow"></div>
+
+                <div class="safe" id="safe">
+
+                    <div class="safe-body">
+
+                        <div class="safe-door" id="safeDoor">
+
+                            <div class="safe-top">
+
+                            </div>
+
+                            <div class="dial">
+                                <div class="dial-inner">
+                                    <div class="dial-center"></div>
+                                </div>
+                            </div>
+
+                            <div class="safe-handle"></div>
+
+                            <div class="safe-locks">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="safe-brand">segredo</div>
+
+                        </div>
+
+                        <div class="safe-inside">
+
+                            <span>ACESSO LIBERADO</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="safe-shadow"></div>
+                <p class="safe-caption" id="safeCaption">
+                    <span class="status-dot"></span>
+                    COFRE BLOQUEADO
+                </p>
+            </div>
+
+            <div class="game-panel">
+
+                <div class="panel-heading">
+                    <span>INSIRA A SENHA</span>
+                    <span class="attempt-label">TENTATIVAS</span>
+                </div>
+
+                <div class="attempt-bar">
+                    <div class="attempt-fill" id="attemptFill"></div>
+                </div>
+
+                <div class="attempt-info">
+                    <span id="attemptText">7 tentativas disponíveis</span>
+                    <span id="attemptNumber">00 / 07</span>
+                </div>
+
+                <label for="guess">Qual é a senha secreta?</label>
+
+                <div class="input-area">
+                    <input type="number" id="guess" min="1" max="50" placeholder="00" autocomplete="off">
+
+                    <button id="tryButton" onclick="checkPassword()">
+                        TENTAR <span>→</span>
+                    </button>
+                </div>
+
+                <p id="message" class="message" aria-live="polite">
+                    Digite um número de 1 a 50 para começar.
+                </p>
+
+                <button class="restart-button" onclick="restartGame()">
+                    ↻ &nbsp; REINICIAR JOGO
+                </button>
+
+            </div>
+
+            <footer>
+                <span>Luiza Pedroso © 2026</span>
+                <span>DESAFIE SUA INTUIÇÃO.</span>
+            </footer>
+
+        </section>
+    </main>
+
+    <!-- TELA SUSPENSA -->
+    <div class="overview" id="overview">
+
+        <div class="modal">
+
+            <div class="success-icon">✓</div>
+
+            <span class="modal-subtitle">ACESSO AUTORIZADO</span>
+
+            <h2>Cofre <span>desbloqueado!</span></h2>
+
+            <p>Parabéns! Você descobriu a senha secreta.</p>
+
+            <div class="result">
+                <span>SUA QUANTIDADE DE TENTATIVAS</span>
+                <strong id="resultAttempts">0</strong>
+            </div>
+
+            <button onclick="restartGame()" class="modal-button">
+                JOGAR NOVAMENTE ↗
+            </button>
+
+        </div>
+    </div>
+
+    <script src="SCRIPT.JS"></script>
+</body>
+
+</html>
